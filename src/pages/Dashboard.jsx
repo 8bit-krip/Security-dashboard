@@ -3,7 +3,7 @@ import DonutChart from '../components/DonutChart';
 import SubheadingModal from '../components/SubheadingModal';
 import { fetchSheetData } from '../utils/fetchData';
 import { useNavigate } from 'react-router-dom';
-import ConsltekLogo from '../assets/Conslteklogo.png';
+import ConsltekLogo from '../assets/conslteklogo.png';
 import CUKCLogo from '../assets/CUKC_logo.png';
 import { FiHome, FiRefreshCw } from 'react-icons/fi';
 
