@@ -3,7 +3,7 @@ import DonutChart from '../components/DonutChart';
 import SubheadingModal from '../components/SubheadingModal';
 import { fetchSheetData } from '../utils/fetchData';
 import { useNavigate } from 'react-router-dom';
-import ConsltekLogo from '../assets/conslteklogo.png';
+
 import CUKCLogo from '../assets/CUKC_logo.png';
 import { FiHome, FiRefreshCw } from 'react-icons/fi';
 
@@ -145,7 +145,7 @@ function Dashboard() {
 
           {/* Logo on right */}
           <img
-            src={ConsltekLogo}
+            src="./conslteklogo.png"
             alt="CUKC Logo"
             className="h-14 w-auto object-contain"
           />

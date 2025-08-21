@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Logo from '../assets/conslteklogo.png';
+
 
 function Navbar() {
   return (
@@ -10,7 +10,7 @@ function Navbar() {
         rel="noopener noreferrer"
         className="flex items-center space-x-2"
       >
-        <img src={Logo} alt="Consltek Logo" className="h-10 w-auto" />
+        <img src="./conslteklogo.png" alt="Consltek Logo" className="h-10 w-auto" />
       </a>
       <Link
         to="/login"
