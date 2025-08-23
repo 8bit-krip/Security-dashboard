@@ -91,7 +91,7 @@ function Dashboard() {
         <div className="flex items-center gap-5">
           <img
             src={CUKCLogo}
-            alt="Consltek Logo"
+            alt="Consltek "
             className="h-12 w-auto object-contain"
           />
           <h1 className="text-3xl md:text-4xl font-bold text-[#15587B] tracking-tight">

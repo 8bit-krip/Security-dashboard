@@ -2,9 +2,9 @@ import React from 'react';
 import { PieChart, Pie, Cell, Tooltip } from 'recharts';
 
 const COLOR_MAP = {
-  Compliant: '#228B22',       
-  'Non-Compliant': '#D93434', 
-  Other: '#FF9900',           
+  Compliant: '#228B22',
+  'Non-Compliant': '#D93434',
+  Other: '#FF9900',
 };
 
 function DonutChart({ compliant = 0, total = 0, other = 0 }) {
@@ -52,19 +52,23 @@ function DonutChart({ compliant = 0, total = 0, other = 0 }) {
           ))}
         </Pie>
         <Tooltip
+          wrapperStyle={{
+            zIndex: 50, 
+          }}
           contentStyle={{
             backgroundColor: 'white',
             borderRadius: '8px',
             border: '1px solid #ddd',
             padding: '6px 10px',
             fontSize: '0.875rem',
-            boxShadow: '0 4px 8px rgba(0,0,0,0.08)',
+            boxShadow: '0 4px 8px rgba(0,0,0,0.12)',
           }}
           formatter={(value, name) => [
             `${value} (${Math.round((value / total) * 100)}%)`,
-            name
+            name,
           ]}
         />
+
       </PieChart>
 
       {/* Center Percentage */}

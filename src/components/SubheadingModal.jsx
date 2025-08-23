@@ -7,7 +7,7 @@ const getColor = (colour) => {
   const colorMap = {
     Green: '#228B22',
     Red: '#D93434',
-    Gray: '#FF9900', // mapped Gray -> orange
+    Gray: '#FF9900', 
   };
   return colorMap[colour?.trim()] || '#A0AEC0';
 };
@@ -28,7 +28,7 @@ const SubheadingModal = ({ service, onClose }) => {
       {/* Modal wrapper */}
       <div className="fixed inset-0 flex items-center justify-center p-4">
         <Dialog.Panel className="bg-white/95 backdrop-blur-lg border border-gray-200 shadow-2xl rounded-3xl max-w-5xl w-full p-8 relative ring-1 ring-gray-200 animate-[fadeInUp_0.35s_ease-out]">
-          
+
           {/* Close Button */}
           <button
             onClick={onClose}
@@ -58,18 +58,21 @@ const SubheadingModal = ({ service, onClose }) => {
                   <div className="relative w-28 h-28 mb-4">
                     <PieChart width={112} height={112}>
                       <Pie
-                        data={[{ name: 'Filled', value: 100 }]}
+                        data={[{ name: 'Filled', value: 100 }]} 
                         cx="50%"
                         cy="50%"
                         innerRadius={34}
                         outerRadius={52}
                         dataKey="value"
                         startAngle={90}
-                        endAngle={450}
+                        endAngle={-270} 
+                        stroke="none"   
                       >
                         <Cell key="cell" fill={color} />
                       </Pie>
                     </PieChart>
+
+                    {/* Center text */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="text-[0.75rem] font-semibold text-gray-700 text-center px-1">
                         {subTitle}
@@ -77,18 +80,25 @@ const SubheadingModal = ({ service, onClose }) => {
                     </div>
                   </div>
 
+
                   {/* Status Badge */}
                   <p
-                    className={`px-4 py-1.5 rounded-full text-sm font-medium text-center shadow-sm ${
-                      display.toLowerCase() === 'compliant'
-                        ? 'bg-green-100 text-green-700 border border-green-300'
-                        : display.toLowerCase() === 'non-compliant'
+                    className={`px-4 py-1.5 rounded-full text-sm font-medium text-center shadow-sm ${display.toLowerCase() === 'compliant'
+                      ? 'bg-green-100 text-green-700 border border-green-300'
+                      : display.toLowerCase() === 'non-compliant'
                         ? 'bg-red-100 text-red-700 border border-red-300'
-                        : 'bg-yellow-100 text-yellow-700 border border-yellow-300'
-                    }`}
+                        : 'border'
+                      }`}
+                    style={
+                      display.toLowerCase() !== 'compliant' &&
+                        display.toLowerCase() !== 'non-compliant'
+                        ? { backgroundColor: '#FF9900', color: '#000', borderColor: '#FF9900' }
+                        : {}
+                    }
                   >
                     {display}
                   </p>
+
                 </div>
               );
             })}
